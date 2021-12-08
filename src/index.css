@@ -1,13 +1,191 @@
 body {
+  background: #070625;
+  color: white;
+  font-family: 'Dosis', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+  font-size: 54px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100; 
+  font-size: 16px;
 }
+
+.bottomText p {
+  font-size: 24px;
+}
+
+.planetinfo {
+  font-size: 18px;
+}
+#planetlink {
+  font-size: 12px;
+}
+/* 
+
+nav {
+  display: flex;
+  border-bottom: #393857 solid 1px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100; 
+}
+
+
+#textDiv {
+  max-width: 50vh;
+}
+
+#navDiv {
+  text-align: right;
+  margin: 2vh;
+}
+
+.container {
+  max-width: 130vh;
+  margin: 0 auto;
+  min-width: 40rem;
+}
+
+.navButtons {
+  margin: 1rem;
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+}
+
+#topContainer, #bottomContainer {
+  display: flex;
+}
+
+.planetImg {
+  max-width: 50%;
+  min-width: auto;
+  padding:  5vh 10vh 10vh 10vh;
+  margin: 0 auto;
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+#canvas {
+  max-width: 100%;
+  min-width: auto;
+  padding:  5vh 10vh 10vh 10vh;
+  margin: 0 auto;
+  display: block;
+  width: 60vh;
+  height: 60vh;
+}
+
+#navDiv {
+  margin-left: 120vh;
+}
+
+
+
+
+#bottomContainer {
+  justify-content: space-between;
+}
+
+#navName {
+  margin: 1.3vh 2vh 2vh 2vh;
+} */
+.categoryButton {
+  /* display: block; */
+  border: #393857 1px solid;
+  /* margin: .7rem 0 0 0; */
+  padding: .8rem;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.categoryButtonPressed {
+  display: block;
+  background: #6D2ED5;
+  border: #6D2ED5 1px solid;
+  /* margin: 1rem 0 0 0; */
+  color: white;
+}
+
+.bottomText {
+  border: #393857 1px solid;
+  padding: 1vh 2vh 0 2vh;
+  width: 15vw;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 18fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4vh 1px;
+  grid-gap: 1.5vh 1vw;
+  justify-items: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100; 
+  width: 100%;
+  margin: 1.5vh 0 0 0;
+}
+
+#navName { grid-column: 1/2; font-size: 1rem; margin: auto 0 auto 1.5vh; }
+#plan1 { grid-column: 3/4; margin: auto 0; }
+#plan2 { grid-column: 4/5; margin: auto 0; }
+#plan3 { grid-column: 5/6; margin: auto 0; }
+#plan4 { grid-column: 6/7; margin: auto 0; }
+#plan5 { grid-column: 7/8; margin: auto 0; }
+#plan6 { grid-column: 8/9; margin: auto 0; }
+#plan7 { grid-column: 9/10; margin: auto 0; }
+#plan8 { grid-column: 10/11; margin: auto 0; }
+#navLine {grid-row: 2/3; grid-column: 1/-1; background: #393857; width: 100%; height: 100%; margin: 0 -10vw;}
+
+.navButtons {
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 10% 0.5fr 0.5fr 1fr 0.25fr 0.25fr 0.5fr 1fr 10%;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+  grid-template-areas:
+    ". . img img img . title title ."
+    ". . img img img . text text ."
+    ". . img img img . link link ."
+    ". . img img img . button1 button1 ."
+    ". . img img img . button2 button2 ."
+    ". . img img img . button3 button3 ."
+    ". . . . . . . . ."
+    ". rot rot rev rad rad rad temp .";
+    grid-gap: 2vh;
+}
+
+.planetImg { 
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#planetTitle { grid-area: title; margin: 4vh 0 2vh 0; font-size: 2.5rem; }
+.planetinfo { grid-area: text; margin: 1vh 0; }
+#planetlink { grid-area: link; margin: 0; }
+#category1 { grid-area:button1; }
+#category2 { grid-area: button2; }
+#category3 { grid-area: button3; }
+#rot { grid-area: rot; justify-self: center;}
+#rev { grid-area: rev; justify-self: center;}
+#rad { grid-area: rad; justify-self: center;}
+#temp { grid-area: temp; justify-self: center;}
