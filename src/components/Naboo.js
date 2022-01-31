@@ -20,19 +20,19 @@ export default function Naboo() {
                 <h1 id="planetTitle">Naboo</h1>
                 <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
                 <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
-                <Link to={`${match.url}/Jedi_Temple`} id="category3" className="categoryButton" >03 Jedi Temple</Link>
+                <Link to={`${match.url}/info3`} id="category3" className="categoryButton" >03 </Link>
                 <Switch>
                     <Route path={`${match.path}/info2`}>
                         <p className="planetinfo">side 2</p>
-                        <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Coruscant">Wookieepedia</a></p>
+                        <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Naboo">Wookieepedia</a></p>
                     </Route>
-                    <Route path={`${match.path}/Jedi_Temple`}>
-                        <p className="planetinfo">JEDI</p>
-                        <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Coruscant">Wookieepedia</a></p>
+                    <Route path={`${match.path}/info3`}>
+                        <p className="planetinfo">side 3</p>
+                        <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Naboo">Wookieepedia</a></p>
                     </Route>
                     <Route path={match.path}>
                         <p className="planetinfo">Naboo was a bountiful planet in the Chommell sector of the Mid Rim, close to the border of the Outer Rim Territories. It was home to the Gungan species and to a population of humans known as the Naboo. Naboo was pushed to the forefront of galactic politics as the birthplace of the Dark Lord of the Sith Sheev Palpatine, who served as its representative in the Senate of the Galactic Republic.</p>
-                        <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Coruscant">Wookieepedia</a></p>
+                        <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Naboo">Wookieepedia</a></p>
                     </Route>
                 </Switch>
             <div className="bottomText" id="rot">

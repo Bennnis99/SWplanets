@@ -22,15 +22,15 @@ export default function Mustafar() {
                 <h1 id="planetTitle">Mustafar</h1>
                 <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
                 <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
-                <Link to={`${match.url}/Jedi_Temple`} id="category3" className="categoryButton" >03 Jedi Temple</Link>
+                <Link to={`${match.url}/info3`} id="category3" className="categoryButton" >03 </Link>
                 <Switch>
                     <Route path={`${match.path}/info2`}>
                         <p className="planetinfo">side 2</p>
                         <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Mustafar">Wookieepedia</a></p>
                     </Route>
-                    <Route path={`${match.path}/Jedi_Temple`}>
+                    <Route path={`${match.path}/info3`}>
                         {/* <JediTemple /> */}
-                        <p className="planetinfo">JEDI</p>
+                        <p className="planetinfo">side 3</p>
                         <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Mustafar">Wookieepedia</a></p>
                     </Route>
                     <Route path={match.path}>

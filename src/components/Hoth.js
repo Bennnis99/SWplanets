@@ -17,7 +17,7 @@ return(
     <div id="content" className="container">
         {/* <Model className="planetImg" /> */}
         <img class="planetImg" src={hothImg}/>
-            <h1 id="planetTitle">HOTH</h1>
+            <h1 id="planetTitle">Hoth</h1>
             <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
             <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
             <Link to={`${match.url}/info3`} id="category3" className="categoryButton" >03 </Link>

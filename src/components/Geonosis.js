@@ -26,7 +26,7 @@ export default function Geonosis() {
         <div id="content" className="container">
             {/* <Model className="planetImg" /> */}
             <img class="planetImg" src={geonosisImg}/>
-                <h1 id="planetTitle">GEONOSIS</h1>
+                <h1 id="planetTitle">Geonosis</h1>
                 <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
                 <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
                 <Link to={`${match.url}/Jedi_Temple`} id="category3" className="categoryButton" >03 Jedi Temple</Link>

@@ -24,7 +24,7 @@ export default function Coruscant() {
         <div id="content" className="container">
             {/* <Model className="planetImg" /> */}
             <img class="planetImg" src={coruscantImg}/>
-                <h1 id="planetTitle">CORUSCANT</h1>
+                <h1 id="planetTitle">Coruscant</h1>
                 <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
                 <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
                 <Link to={`${match.url}/Jedi_Temple`} id="category3" className="categoryButton" >03 Jedi Temple</Link>
