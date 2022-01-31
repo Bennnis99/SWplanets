@@ -1,17 +1,39 @@
 // import Model from "./Model"
-import {Category1Button, Category2Button, Category3Button} from "./CategoryButton"
 import tatooineImg from "../img/tatooine.png"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useRouteMatch,
+    useParams,
+    Link
+  } from "react-router-dom";
 
 function Tatooine() {
+
+    let match = useRouteMatch();
+
     return(
         <div id="content" className="container">
                 <img className="planetImg" src={tatooineImg}/>
                     <h1 id="planetTitle">TATOOINE</h1>
-                    <p className="planetinfo">Tatooine was a sparsely inhabited circumbinary desert planet located in the galaxy's Outer Rim Territories. Part of a binary star system, the planet was oppressed by scorching suns, resulting in the world lacking the necessary surface water to sustain large populations. As a result, many residents of the planet instead drew water from the atmosphere via moisture farms. The planet also had little surface vegetation.</p>
-                    <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Tatooine">Wookieepedia</a></p>
-                        <a id="category1" className="categoryButton categoryButtonPressed" href="" onclick={Category1Button}>01 Overview</a>
-                        <a id="category2" className="categoryButton" href="" onclick={Category2Button}>02 </a>
-                        <a id="category3" className="categoryButton" href="" onclick={Category3Button}>03</a>
+                    <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
+                    <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
+                    <Link to={`${match.url}/info3`} id="category3" className="categoryButton" >03 </Link>
+                    <Switch>
+                        <Route path={`${match.path}/info2`}>
+                            <p className="planetinfo">side 2</p>
+                            <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Tatooine">Wookieepedia</a></p>
+                        </Route>
+                        <Route path={`${match.path}/info3`}>
+                            <p className="planetinfo">side 3</p>
+                            <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Tatooine">Wookieepedia</a></p>
+                        </Route>
+                        <Route path={match.path}>
+                            <p className="planetinfo">Tatooine was a sparsely inhabited circumbinary desert planet located in the galaxy's Outer Rim Territories. Part of a binary star system, the planet was oppressed by scorching suns, resulting in the world lacking the necessary surface water to sustain large populations. As a result, many residents of the planet instead drew water from the atmosphere via moisture farms. The planet also had little surface vegetation.</p>
+                            <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Tatooine">Wookieepedia</a></p>
+                        </Route>
+                    </Switch>
                 <div className="bottomText" id="rot">
                     <h2>ROTATION TIME</h2>
                     <p>34 HOURS</p>  
