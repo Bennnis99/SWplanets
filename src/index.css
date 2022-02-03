@@ -186,7 +186,7 @@ nav {
 #category1 { grid-area:button1; }
 #category2 { grid-area: button2; }
 #category3 { grid-area: button3; }
-#rot { grid-area: rot; justify-self: center;}
-#rev { grid-area: rev; justify-self: center;}
-#rad { grid-area: rad; justify-self: center;}
-#temp { grid-area: temp; justify-self: center;}
+#rot { grid-area: rot; justify-self: center; text-transform: uppercase;}
+#rev { grid-area: rev; justify-self: center; text-transform: uppercase;}
+#rad { grid-area: rad; justify-self: center; text-transform: uppercase;}
+#temp { grid-area: temp; justify-self: center; text-transform: uppercase;}

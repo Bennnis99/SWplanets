@@ -1,3 +1,4 @@
+import React from "react"
 import kaminoImg from "../img/kamino.png"
 import {
     BrowserRouter as Router,
@@ -11,6 +12,10 @@ import {
 
 export default function Kamino() {
 
+    const [catPressed1, SetCatPressed1] = React.useState(true)
+    const [catPressed2, SetCatPressed2] = React.useState()
+    const [catPressed3, SetCatPressed3] = React.useState()
+
     let match = useRouteMatch();
 
     return(
@@ -18,9 +23,9 @@ export default function Kamino() {
             {/* <Model className="planetImg" /> */}
             <img class="planetImg" src={kaminoImg}/>
                 <h1 id="planetTitle">Kamino</h1>
-                <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
-                <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
-                <Link to={`${match.url}/info3`} id="category3" className="categoryButton" >03 Jedi Temple</Link>
+                <Link to={`${match.url}`} id="category1" className={`categoryButton ${catPressed1 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(true); SetCatPressed2(false); SetCatPressed3(false)}} >01 Overview</Link>
+                <Link to={`${match.url}/info2`} id="category2" className={`categoryButton ${catPressed2 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(false); SetCatPressed2(true); SetCatPressed3(false)}} >02 </Link>
+                <Link to={`${match.url}/info3`} id="category3" className={`categoryButton ${catPressed3 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(false); SetCatPressed2(false); SetCatPressed3(true)}} >03 </Link>
                 <Switch>
                     <Route path={`${match.path}/info2`}>
                         <p className="planetinfo">side 2</p>

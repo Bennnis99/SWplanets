@@ -1,3 +1,4 @@
+import React from "react"
 import geonosisImg from "../img/geonosis.png"
 import Model from "./Model"
 import {
@@ -8,17 +9,12 @@ import {
     useParams,
     Link
   } from "react-router-dom";
-// import { useState } from "react";
-// const [fik, setdik] = useState(default)
-// const default = {
-//     color:'green'
-// }
-// const kuk = {
-//     color:'red'
-// }
-// <h1 style = {fik} onClick={() => {setdik(this.value)}}>kuk</h1>
 
 export default function Geonosis() {
+
+    const [catPressed1, SetCatPressed1] = React.useState(true)
+    const [catPressed2, SetCatPressed2] = React.useState()
+    const [catPressed3, SetCatPressed3] = React.useState()
 
     let match = useRouteMatch();
 
@@ -27,9 +23,9 @@ export default function Geonosis() {
             {/* <Model className="planetImg" /> */}
             <img class="planetImg" src={geonosisImg}/>
                 <h1 id="planetTitle">Geonosis</h1>
-                <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
-                <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
-                <Link to={`${match.url}/info3`} id="category3" className="categoryButton" >03 Jedi Temple</Link>
+                <Link to={`${match.url}`} id="category1" className={`categoryButton ${catPressed1 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(true); SetCatPressed2(false); SetCatPressed3(false)}} >01 Overview</Link>
+                <Link to={`${match.url}/info2`} id="category2" className={`categoryButton ${catPressed2 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(false); SetCatPressed2(true); SetCatPressed3(false)}} >02 </Link>
+                <Link to={`${match.url}/info3`} id="category3" className={`categoryButton ${catPressed3 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(false); SetCatPressed2(false); SetCatPressed3(true)}} >03 </Link>
                 <Switch>
                     <Route path={`${match.path}/info2`}>
                         <p className="planetinfo">side 2</p>

@@ -14,9 +14,10 @@ import {
 
 export default function Coruscant() {
 
-    function CatButton() {
-        document.getElementById('category1').classlist.remove('categoryButtonPressed')
-    }
+    const [catPressed1, SetCatPressed1] = React.useState(true)
+    const [catPressed2, SetCatPressed2] = React.useState()
+    const [catPressed3, SetCatPressed3] = React.useState()
+
 
     let match = useRouteMatch();
     
@@ -25,12 +26,12 @@ export default function Coruscant() {
             {/* <Model className="planetImg" /> */}
             <img class="planetImg" src={coruscantImg}/>
                 <h1 id="planetTitle">Coruscant</h1>
-                <Link to={`${match.url}`} id="category1" className="categoryButton categoryButtonPressed" >01 Overview</Link>
-                <Link to={`${match.url}/info2`} id="category2" className="categoryButton" >02 </Link>
-                <Link to={`${match.url}/Jedi_Temple`} id="category3" className="categoryButton" >03 Jedi Temple</Link>
+                <Link to={`${match.url}`} id="category1" className={`categoryButton ${catPressed1 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(true); SetCatPressed2(false); SetCatPressed3(false)}} >01 Overview</Link>
+                <Link to={`${match.url}/Surface`} id="category2" className={`categoryButton ${catPressed2 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(false); SetCatPressed2(true); SetCatPressed3(false)}} >02 Surface</Link>
+                <Link to={`${match.url}/Jedi_Temple`} id="category3" className={`categoryButton ${catPressed3 ? "categoryButtonPressed" : ""}`} onClick={() => {SetCatPressed1(false); SetCatPressed2(false); SetCatPressed3(true)}} >03 Jedi Temple</Link>
                 <Switch>
-                    <Route path={`${match.path}/info2`}>
-                        <p className="planetinfo">side 2</p>
+                    <Route path={`${match.path}/Surface`}>
+                        <p className="planetinfo">Coruscant's surface was defined by its urban sprawl, which collectively was called Galactic City. The dense city blocks were built on top of each other, with lowest being Level 1 and the highest reaching to Level 5127. The lowest known habitable level was Level 5. At its highest level, Galactic City's skyscrapers were built with many reaching 6,000 meters into the atmosphere, with sleek, transparisteel edifices standing next to older duracrete structures</p>
                         <p id="planetlink">link <a href="https://starwars.fandom.com/wiki/Coruscant">Wookieepedia</a></p>
                     </Route>
                     <Route path={`${match.path}/Jedi_Temple`}>
